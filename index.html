@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Echoes of Seoul</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    body{
+      overflow-x:hidden;
+      background:#0f172a;
+      font-family:Arial, sans-serif;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 60px;
+      background:rgba(15, 23, 42, 0.95);
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+      box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#ff8e8e;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+    color:#ff8e8e;
+	}
+
+    /* SLIDER */
+
+    .slider{
+      width:100%;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .slide-track{
+      display:flex;
+      width:calc(350px * 18);
+      animation:scroll 30s linear infinite;
+    }
+
+    .slide-track:hover{
+      animation-play-state:paused;
+    }
+
+    .slide{
+      width:320px;
+      height:450px;
+      margin:20px;
+      border-radius:20px;
+      overflow:hidden;
+      flex-shrink:0;
+      position:relative;
+      box-shadow:0 10px 25px rgba(0,0,0,0.5);
+      transition:0.3s;
+    }
+
+    .slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .slide:hover{
+      transform:scale(1.05);
+    }
+
+    .overlay{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      padding:20px;
+      background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    @keyframes scroll{
+      0%{
+        transform:translateX(0);
+      }
+      100%{
+        transform:translateX(calc(-350px * 9));
+      }
+    }
+
+  </style>
+
+  <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090014;
+    color:white;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    color:#ff8e8e;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:ff8e8e;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ff8e8e;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:20px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-content h1{
+    font-size:70px;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.hero-content span{
+    color:#ff8e8e;
+}
+
+.hero-content p{
+    color:#ff8e8e;
+    margin-bottom:35px;
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.buttons button{
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+
+    background:linear-gradient(45deg,#7b2ff7,#c84bff);
+
+    color:white;
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.buttons button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(200,75,255,0.4);
+}
+
+/* SECTION */
+
+.movies{
+    padding:100px 60px;
+}
+
+.movies h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:45px;
+}
+
+/* GENRE BUTTONS */
+
+.genre-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+
+    margin-bottom:40px;
+}
+
+.genre-buttons a{
+    padding:10px 25px;
+    border-radius:30px;
+    text-decoration:none;
+
+    background:#1c0030;
+    color:white;
+
+    transition:0.3s;
+}
+
+.genre-buttons a:hover{
+    background:#ff8e8e;
+}
+
+/* MOVIE GRID */
+
+.movie-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.movie-card{
+    background:#130022;
+    border-radius:18px;
+    overflow:hidden;
+
+    transition:0.3s;
+}
+
+.movie-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(200,75,255,0.3);
+}
+
+.movie-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.movie-info{
+    padding:15px;
+}
+
+.movie-info h3{
+    margin-bottom:8px;
+}
+
+.movie-info p{
+    color:#b5b5b5;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#05000c;
+    color:#aaa;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .movies{
+        padding:80px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+ <div class="logo flex items-center gap-3">
+
+  <img 
+    src="https://scontent.fceb1-2.fna.fbcdn.net/v/t39.30808-6/690920191_122343415538009494_1157340375263942237_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFu9Hja3NG53mM9tC_aUN984IzD1aa2eYXgjMPVprZ5hZxYnOOrA5ZyOPrWnHHRP18tE2n0auRuA5eyVzeYJbzc&_nc_ohc=yWzdqX6bLPYQ7kNvwGnvWGY&_nc_oc=AdqC5C6HBOvYt5Gm7fZd2y7kbHOGf4Q5RKASMpWKjQqxw_3r719qrHdsPTtnXiOrDZ0&_nc_zt=23&_nc_ht=scontent.fceb1-2.fna&_nc_gid=XgWYtGtW6euh5aNEHk-yug&_nc_ss=7b2a8&oh=00_Af7N3l-61QB2Xe4wMMvrO5jswcG4g3dOUjjRcPUxSLKJaw&oe=6A0B6023"
+    alt="K-Drama Logo"
+    class="w-16 h-16 object-cover"
+  >
+
+  <span>Echoes of Seoul</span>
+
+</div>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+	  <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Member.html">Members</a>
+    </div>
+
+  </nav>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="w-full pt-36">
+
+	<h1 class="text-center text-5xl font-bold mb-10" style="color: #ff8e8e;">
+	All Time K-Drama Favorites
+	</h1>
+
+    <h4 class="text-center text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-12 px-4">
+      Discover the best Korean dramas to watch — from heartwarming romances and thrilling mysteries to action-packed series and unforgettable classics. Explore top-rated K-dramas, trending recommendations, and your next binge-worthy obsession all in one place!
+    </h4>
+
+    <div class="slider">
+
+      <div class="slide-track">
+
+        <!-- ORIGINAL IMAGES -->
+
+       <div class="slide">
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8dPSNPLG5oy1nUhMC2C1gYYFezMQHY799iknz_AjD9WPKqedo" />
+          <div class="overlay">Crash Landing on You</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BNWIyNTA3MmItNzY5ZS00NmZhLThjMWYtZjIxYzllZWU5YWIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" />
+          <div class="overlay">Goblin</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://upload.wikimedia.org/wikipedia/en/7/76/True_Beauty_TV_series_poster.jpg" />
+          <div class="overlay">True Beauty</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://asianwiki.com/images/a/a8/Business_Proposal-p1.jpg" />
+          <div class="overlay">Business Proposal</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BNWNmYmQ2NzctNTA1NS00NGU2LThjOTQtYTgxNmUyYmNjODYyXkEyXkFqcGc@._V1_.jpg" />
+          <div class="overlay">Queen of Tears</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BNjA1YmJiNTMtMDc4OC00ZjlkLTgyMjctYzRmMWJhMmZhMjkyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" />
+          <div class="overlay">Vincenzo</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BZmFmYTU0YTItZTk4ZS00ZWMzLThmOTgtOGIyOTBkY2QwZjc0XkEyXkFqcGc@._V1_.jpg" />
+          <div class="overlay">Hotel Del Luna</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://upload.wikimedia.org/wikipedia/en/6/67/Lovely_Runner.png" />
+          <div class="overlay">Lovely Runner</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BYTdjZWExZmMtZTY0Yy00N2U3LTkyYmYtMGNjZjUyZTM0Njg0XkEyXkFqcGc@._V1_.jpg" />
+          <div class="overlay">Twenty Five Twenty One</div>
+        </div>
+
+        <!-- DUPLICATE FOR INFINITE EFFECT -->
+
+        <div class="slide">
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8dPSNPLG5oy1nUhMC2C1gYYFezMQHY799iknz_AjD9WPKqedo" />
+          <div class="overlay">Crash Landing on You</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BNWIyNTA3MmItNzY5ZS00NmZhLThjMWYtZjIxYzllZWU5YWIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" />
+          <div class="overlay">Goblin</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://upload.wikimedia.org/wikipedia/en/7/76/True_Beauty_TV_series_poster.jpg" />
+          <div class="overlay">True Beauty</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://asianwiki.com/images/a/a8/Business_Proposal-p1.jpg" />
+          <div class="overlay">Business Proposal</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BNWNmYmQ2NzctNTA1NS00NGU2LThjOTQtYTgxNmUyYmNjODYyXkEyXkFqcGc@._V1_.jpg" />
+          <div class="overlay">Queen of Tears</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BNjA1YmJiNTMtMDc4OC00ZjlkLTgyMjctYzRmMWJhMmZhMjkyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" />
+          <div class="overlay">Vincenzo</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BZmFmYTU0YTItZTk4ZS00ZWMzLThmOTgtOGIyOTBkY2QwZjc0XkEyXkFqcGc@._V1_.jpg" />
+          <div class="overlay">Hotel Del Luna</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://upload.wikimedia.org/wikipedia/en/6/67/Lovely_Runner.png" />
+          <div class="overlay">Lovely Runner</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://m.media-amazon.com/images/M/MV5BYTdjZWExZmMtZTY0Yy00N2U3LTkyYmYtMGNjZjUyZTM0Njg0XkEyXkFqcGc@._V1_.jpg" />
+          <div class="overlay">Twenty Five Twenty One</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ALL MOVIES -->
+
+  <section class="movies" id="all">
+
+<h2 style="color:#ff8e8e;">Genres</h2>
+
+<div class="movie-grid">
+
+  <a href="Comedy.html" class="movie-card">
+    <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2024/07/welcome-to-waikiki-2018.jpg?q=49&fit=contain&w=480&dpr=2">
+    <div class="movie-info">
+      <p>Comedy</p>
+    </div>
+  </a>
+
+  <a href="Fantasy.html" class="movie-card">
+    <img src="https://images.justwatch.com/poster/289753064/s718/alchemy-of-souls.jpg">
+    <div class="movie-info">
+      <p>Fantasy</p>
+    </div>
+  </a>
+
+  <a href="Historical.html" class="movie-card">
+    <img src="https://tse4.mm.bing.net/th/id/OIP.4CZiZWNcwCR8jTLwwt3lNQHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+    <div class="movie-info">
+      <p>Historical</p>
+    </div>
+  </a>
+
+  <a href="Horror.html" class="movie-card">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.rnfksCOjZ_kDjGLRC3-QJQHaKk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+    <div class="movie-info">
+      <p>Horror</p>
+    </div>
+  </a>
+
+  <a href="medical.html" class="movie-card">
+    <img src="https://images.justwatch.com/poster/329191842/s718/resident-playbook.jpg">
+    <div class="movie-info">
+      <p>Medical</p>
+    </div>
+  </a>
+
+  <a href="melodrama.html" class="movie-card">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.kECPsZ1QNDp1FX4RsxeImgHaKk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+    <div class="movie-info">
+      <p>Melodrama</p>
+    </div>
+  </a>
+
+  <a href="romcom.html" class="movie-card">
+    <img src="https://m.media-amazon.com/images/M/MV5BNzQwYzViZjYtOWEwNS00ZTcyLWE2MTYtM2FiYzkyZmIzMjI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+    <div class="movie-info">
+      <p>Romantic Comedy</p>
+    </div>
+  </a>
+
+  <a href="Thriller.html" class="movie-card">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.8G8o9mUPX9edhijZOIi9PAHaKk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+    <div class="movie-info">
+      <p>Thriller</p>
+    </div>
+  </a>
+
+</div>
+
+  </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+  © 2026 Echoes of Seoul — All right reserved
+  </footer>
+
+</body>
+</html>

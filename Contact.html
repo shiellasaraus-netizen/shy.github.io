@@ -1,0 +1,117 @@
+<style>
+  #contact {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+    font-family: Arial, sans-serif;
+    color: #e6e6e6;
+  }
+
+  .contact-container {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+  }
+
+  .contact-title {
+    text-align: center;
+    font-size: 34px;
+    color: #ffb3b3;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #ff8e8e;
+  }
+
+  .contact-card h3 {
+    margin-bottom: 8px;
+    color: #ff8e8e;
+    font-size: 18px;
+  }
+
+  .contact-card p {
+    margin: 0;
+    font-size: 15px;
+    color: #d6d6d6;
+    line-height: 1.6;
+  }
+
+  .contact-highlight {
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: #0f0f0f;
+    color: #aaa;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<section id="contact">
+  <div class="contact-container">
+
+    <h2 class="contact-title">Contact Us</h2>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p class="contact-highlight">echoesofseoul26@gmail.com</p>
+        <p>Feel free to send us your inquiries, suggestions, or feedback anytime.</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Contact Number</h3>
+        <p class="contact-highlight">0967 975 1831</p>
+        <p>Available for calls and messages for support or concerns.</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Address</h3>
+        <p>
+          Macopa St., Paz Village Subdivision<br>
+          Gingoog City, 9014<br>
+          Misamis Oriental, Philippines
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>About Support</h3>
+        <p>
+          We aim to respond as quickly as possible. Your feedback helps us improve the platform and deliver a better experience for all users.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Echoes of Seoul — All rights reserved | Designed for entertainment discovery
+</footer>

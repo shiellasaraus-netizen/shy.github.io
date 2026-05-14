@@ -1,0 +1,158 @@
+<style>
+  #team {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+    font-family: Arial, sans-serif;
+    color: #e6e6e6;
+  }
+
+  .team-container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .team-title {
+    font-size: 34px;
+    color: #ffb3b3;
+    margin-bottom: 25px;
+  }
+
+  .team-intro {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+.team-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+/* IMAGE FIX - NO CROPPING */
+.team-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #000;
+}
+
+  .team-card h3 {
+    color: #ff8e8e;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .team-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #ddd;
+  }
+
+  .info-section {
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #ccc;
+  }
+
+  .info-section h3 {
+    color: #ff8e8e;
+    margin-top: 20px;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ff8e8e, transparent);
+    margin: 30px 0;
+    opacity: 0.6;
+  }
+  
+  .info-section p {
+  text-align: justify;
+}
+</style>
+
+<section id="team">
+  <div class="team-container">
+
+    <h2 class="team-title">Our Team</h2>
+
+    <div class="team-intro">
+      The team is composed of four different individual, with one goal and one passion.
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img src="https://scontent-mnl3-1.xx.fbcdn.net/v/t39.30808-6/689014152_122343608066009494_8143917603226771570_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHlLgVvFlfOHIZMhuDqLLhp4glMhUZz5fviCUyFRnPl-2m8lOXl9VlieWyV0Ahgeo13bzUjOJjvIlb_yMe2Uhla&_nc_ohc=AOPV-LkJJeQQ7kNvwEHIoZV&_nc_oc=AdoQIdVlqOojVdvi-eMeNHLPNoWnbJefmqq3C0vALABczDLIZ3I1SObbUNweiwIbYeA&_nc_zt=23&_nc_ht=scontent-mnl3-1.xx&_nc_gid=JTLo_7QyUhbIzuTCQAmb8w&_nc_ss=782a8&oh=00_Af6-ctqDk2dRglqK2AVxvoVjrbFRCprQxtd_eSVz3qLR3g&oe=6A039B90" alt="Shiella">
+        <h3>Saraus, Shiella</h3>
+        <p><strong>Birth:</strong> N/A</p>
+        <p><strong>Age:</strong> N/A</p>
+        <p><strong>Address:</strong> N/A</p>
+      </div>
+
+      <div class="team-card">
+        <img src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/694647412_122343606068009494_4626568991471766655_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGMGOR-pGGO_LRzRvgF1G5bKhB-A5tLks4qEH4Dm0uSzlvQ-6SXRlAEqO_K50y9_nDHQTVYRdw4BH7Y3yC5kknX&_nc_ohc=CZhjRom2oYUQ7kNvwGmJ_kK&_nc_oc=Adpz1c46OnoFiunYz3k4o7ZYu1m47yFCYoj-5-mh9MoJgWnwUOc62Ewxxt0vpQw6MFg&_nc_zt=23&_nc_ht=scontent-mnl1-2.xx&_nc_gid=8b2NK_WQRif6C6Dj7iEqDQ&_nc_ss=782a8&oh=00_Af60fnpiblU-Nk51KIaqDYI5jf3l6pSp_nsepppkzQjXbQ&oe=6A03724A" alt="Maiccca">
+        <h3>Melgaso, Maiccca</h3>
+        <p><strong>Birth:</strong> N/A</p>
+        <p><strong>Age:</strong> N/A</p>
+        <p><strong>Address:</strong> N/A</p>
+      </div>
+
+      <div class="team-card">
+        <img src="https://scontent-mnl1-1.xx.fbcdn.net/v/t39.30808-6/696289872_122343598160009494_5128763796428334984_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHMHDsLELotw0-qofY_r1Z_wJusB2fXaHvAm6wHZ9doe3-KpJNDOiMiI__tjBfvUBuBRcAuq-G5vNX8yiId9AsP&_nc_ohc=Gkksy53tY2oQ7kNvwE6KUYx&_nc_oc=Ado9cTUfI8734xDLd7gZLv5cIhyGEkxazon72A1cDVZeUXazVl1vUoDeuXGJZmXRGyU&_nc_zt=23&_nc_ht=scontent-mnl1-1.xx&_nc_gid=tN8Ot4dDL_y1qFrCgV4Csw&_nc_ss=782a8&oh=00_Af5F2iPUntz8EK_bf7hsU-HB-eTu13CSghGFFzeZWGGFrA&oe=6A03654D" alt="Mariel Rose">
+        <h3>Sarmiento, Mariel Rose</h3>
+        <p><strong>Birth:</strong> N/A</p>
+        <p><strong>Age:</strong> N/A</p>
+        <p><strong>Address:</strong> N/A</p>
+      </div>
+
+      <div class="team-card">
+        <img src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/695039938_122343621950009494_4869104346800225606_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeG2OQHemO6rN3mIF9SdqxDeww8p6k3hfCzDDynqTeF8LIFY018vOchmLyfkmNnssFTUCsdidaqRA0mkrWLTpRiL&_nc_ohc=BcIfScvFBJUQ7kNvwFK2kGf&_nc_oc=AdrF4vmzcT1ZZSXit0QTBaVCZ502e3snwA_iM2S0NT58XYSqduMGPmpJuCrGKkNh0Gg&_nc_zt=23&_nc_ht=scontent-mnl1-2.xx&_nc_gid=9fbRaNLP1ac7MNPkDBXN0Q&_nc_ss=782a8&oh=00_Af5JGW3mii0ym8_TUcDyiRJQS3pd1p4dB5S7mWLd-rjNhg&oe=6A03A639" alt="Judith">
+        <h3>Tutor, Judith</h3>
+        <p><strong>Birth:</strong> N/A</p>
+        <p><strong>Age:</strong> N/A</p>
+        <p><strong>Address:</strong> N/A</p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-section">
+      <h3>Course / Program</h3>
+      <p>Bachelor of Science in Office Administration 3</p>
+
+      <h3>School</h3>
+      <p>Gingoog City Colleges, Inc.</p>
+
+      <h3>Purpose</h3>
+      <p>
+		The purpose of this website is to create an organized and user-friendly platform where users can easily explore, select, and discover entertainment content such as movies and series. This website is designed to help users browse different genres in a simple and enjoyable way, making it easier to find recommended titles without difficulty. It also aims to enhance user experience by providing a clean layout, smooth navigation, and accessible content presentation. </p>
+
+      <h3>Team Appreciation</h3>
+      <p>
+This project was made possible through teamwork, dedication, and collaboration among all members. Each member contributed their ideas, creativity, and effort in building and improving the website.
+
+Through this experience, we learned the importance of cooperation, communication, and responsibility in completing a shared project. Despite challenges, the group worked together to achieve a common goal and deliver a functional and visually appealing website.
+
+Overall, this project not only strengthened our technical skills but also helped us grow as a team and as students preparing for future professional work in the field of technology and administration.      </p>
+    </div>
+
+  </div>
+</section>
